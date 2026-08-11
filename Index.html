@@ -2,43 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>CodeAlpha_Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="calculator">
-    <input type="text" id="display" disabled>
-    <div>
-      <button onclick="clearDisplay()">C</button>
-      <button onclick="appendValue('/')">÷</button>
-      <button onclick="appendValue('*')">×</button>
-      <button onclick="appendValue('-')">−</button>
-    </div>
-    <div>
-      <button onclick="appendValue('7')">7</button>
-      <button onclick="appendValue('8')">8</button>
-      <button onclick="appendValue('9')">9</button>
-      <button onclick="appendValue('+')">+</button>
-    </div>
-    <div>
-      <button onclick="appendValue('4')">4</button>
-      <button onclick="appendValue('5')">5</button>
-      <button onclick="appendValue('6')">6</button>
-      <button onclick="calculate()">=</button>
-    </div>
-    <div>
-      <button onclick="appendValue('1')">1</button>
-      <button onclick="appendValue('2')">2</button>
-      <button onclick="appendValue('3')">3</button>
-      <button onclick="appendValue('0')">0</button>
-    </div>
-    <div>
-      <button onclick="appendValue('Math.sqrt(')">√</button>
-      <button onclick="appendValue('%')">%</button>
-      <button onclick="appendValue('**')">^</button>
-    </div>
-    <div>
-      <button onclick="toggleTheme()">🌙 Dark Mode</button>
+  <div class="calculator-container">
+    <h1>Scientific Glass Calculator</h1>
+    <div class="calculator">
+      <div class="display">
+        <div class="previous-operand"></div>
+        <div class="current-operand">0</div>
+      </div>
+      <div class="buttons-grid">
+        <!-- Basic controls -->
+        <button data-action="clear">C</button>
+        <button data-action="delete">DEL</button>
+        <button data-action="divide">÷</button>
+        <button data-action="multiply">×</button>
+
+        <!-- Numbers -->
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button data-action="subtract">−</button>
+
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button data-action="add">+</button>
+
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button data-action="equals">=</button>
+
+        <button class="zero-btn">0</button>
+        <button data-action="decimal">.</button>
+        <button data-action="sqrt">√</button>
+
+        <!-- Scientific functions -->
+        <button data-action="percent">%</button>
+        <button data-action="power">^</button>
+        <button data-action="sin">sin</button>
+        <button data-action="cos">cos</button>
+        <button data-action="tan">tan</button>
+        <button data-action="log">log</button>
+      </div>
     </div>
   </div>
   <script src="script.js"></script>
