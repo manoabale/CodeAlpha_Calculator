@@ -1,56 +1,57 @@
 body {
   font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: #f4f4f4;
+  margin: 0;
 }
 
-.calculator {
-  background: #fff;
+.calculator-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 15px;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 25px rgba(0,255,136,0.6);
+  text-align: center;
+  color: #fff;
 }
 
-input {
-  width: 100%;
-  height: 40px;
-  margin-bottom: 10px;
+.display {
+  background: rgba(0,0,0,0.6);
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
   text-align: right;
-  font-size: 18px;
+  font-size: 24px;
+  color: #00ff88;
+}
+
+.buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 80px);
+  gap: 10px;
+  justify-content: center;
 }
 
 button {
-  width: 80px;
-  height: 40px;
-  margin: 5px;
-  font-size: 16px;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 18px;
+  color: #fff;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s, transform 0.2s;
 }
 
 button:hover {
-  background: #ddd;
+  background: #00ff88;
+  color: #000;
+  transform: scale(1.05);
 }
 
-/* Dark mode */
-body.dark {
-  background: #222;
-  color: #fff;
-}
-
-body.dark .calculator {
-  background: #333;
-  color: #fff;
-}
-
-body.dark button {
-  background: #444;
-  color: #fff;
-}
-
-body.dark button:hover {
-  background: #555;
+.zero-btn {
+  grid-column: span 2;
 }
